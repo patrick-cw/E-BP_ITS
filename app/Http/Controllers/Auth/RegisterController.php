@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class RegisterController extends Controller
 {
@@ -50,8 +51,14 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'nama' => ['required', 'string', 'max:255'],
+            'nrp' => ['required','numeric'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'telp' => ['required','numeric'],
+            'jenjang' => ['required'],
+            'fakultas' => ['required'],
+            'departemen' => ['required'],
+            'judulTA' => ['required'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -64,10 +71,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        $user = User::create([
+            'nama' => $data['nama'],
+            'nrp' => $data['nrp'],
             'email' => $data['email'],
+            'telp' => $data['telp'],
+            'jenjang' => $data['jenjang'],
+            'fakultas' => $data['fakultas'],
+            'departemen' => $data['departemen'],
+            'judulTA' => $data['judulTA'],
             'password' => Hash::make($data['password']),
         ]);
+        Alert::success('Sukses!', 'Akun berhasil dibuat');        
+        return $user;
     }
 }
