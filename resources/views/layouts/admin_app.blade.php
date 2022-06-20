@@ -8,8 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{asset('admin/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -98,6 +99,11 @@
     <!-- Page level custom scripts -->
     <script src="{{asset('admin/js/demo/chart-area-demo.js')}}"></script>
     <script src="{{asset('admin/js/demo/chart-pie-demo.js')}}"></script>
+    {{-- <script src="{{asset('AdminLTE')}}/plugins/jquery/jquery.min.js"></script> --}}
+    <script src="{{asset('kp_depan')}}/public/vendors/@popperjs/popper.min.js"></script>
+    <script src="{{asset('kp_depan')}}/public/vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="{{asset('kp_depan')}}/public/assets/js/activelink.js"></script>
+    <script src="{{asset('kp_depan')}}/public/assets/js/theme.js"></script>
 
 </body>
 
