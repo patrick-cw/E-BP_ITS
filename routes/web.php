@@ -24,9 +24,9 @@ Route::get('/createWord/eng', [App\Http\Controllers\EBPEnglishController::class,
 Route::get('/createWord/ind', [App\Http\Controllers\EBPIndoController::class,'createWordDoc']);
 
 Route::prefix('admin')->group(function() {
-    Route::get('/login',[App\Http\Controllers\Auth\AdminController::class, 'showLoginForm'])->name('admin.login');
-    Route::post('/login', [App\Http\Controllers\Auth\AdminController::class, 'login'])->name('admin.login.submit');
-    Route::get('logout/', [App\Http\Controllers\Auth\AdminController::class, 'logout'])->name('admin.logout');
+    Route::get('/login',[App\Http\Controllers\Auth\AdminLoginController::class, 'showLoginForm'])->name('admin.login');
+    Route::post('/login', [App\Http\Controllers\Auth\AdminLoginController::class, 'login'])->name('admin.login.submit');
+    Route::get('logout/', [App\Http\Controllers\Auth\AdminLoginController::class, 'logout'])->name('admin.logout');
     Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.dashboard');
     Route::get('/registrasi', [App\Http\Controllers\AdminController::class, 'registrasi'])->name('admin.dashboard');
     Route::put('/dashboard/registrasi/{id}', [App\Http\Controllers\AdminController::class, 'aktivasiMahasiswa'])->name('admin.aktivasi'); 
