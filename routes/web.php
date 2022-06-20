@@ -20,6 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/createWord/eng', [App\Http\Controllers\EBPEnglishController::class,'createWordDoc']);
+Route::get('/createWord/ind', [App\Http\Controllers\EBPIndoController::class,'createWordDoc']);
 
 Route::prefix('admin')->group(function() {
     Route::get('/login',[App\Http\Controllers\Auth\AdminController::class, 'showLoginForm'])->name('admin.login');
