@@ -17,7 +17,7 @@ class AdminSeeder extends Seeder
     {
         \App\Models\Admin::create([
             'nama' => 'Admin',
-            'email' => 'admin@gmail.com',
+            'email' => 'admin@admin.com',
             'nip' => '12345',
             'password' => Hash::make('admin'),
             'updated_at' => now(),
