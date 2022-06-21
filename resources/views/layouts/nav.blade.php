@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg fixed-top py-3 backdrop" data-navbar-on-scroll="data-navbar-on-scroll">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 backdrop" data-navbar-on-scroll="data-navbar-on-scroll">
         <div class="container">
           <a class="navbar-brand d-flex align-items-center fw-bold fs-2" href="/"> 
             <img class="d-inline-block align-top img-fluid" src="/kp_depan/public/assets/img/gallery/logo-icon.png" alt="" width="75" />
@@ -39,6 +39,7 @@
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="/home">Profil</a>
                         <a class="dropdown-item" href="/home">Status Pengajuan</a>
                         <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#logoutModal" href="">Logout</a>
                     </div>

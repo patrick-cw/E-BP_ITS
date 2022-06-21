@@ -27,15 +27,11 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin');
-    }
-    public function registrasi()
-    {
         $admin =  Auth::guard('admin')->user();
         $mahasiswa = User::all();
-        
-        return view ('admin.registrasi', compact(['admin', 'mahasiswa']));
-    }   
+      
+      return view ('admin.index', compact(['admin', 'mahasiswa']));
+    }
     public function detail($id)
   {
       $mahasiswa = User::find($id);
@@ -132,6 +128,42 @@ class AdminController extends Controller
       $mahasiswa = User::all();
       
       return view ('admin.tanggungan', compact(['admin', 'mahasiswa']));
+  } 
+
+  public function tanggunganSetuju(Request $request, $id)
+  {
+    try {
+        DB::transaction(function() use ($request, $id) {
+            $mhs = User::find($id);
+            $mhs->status = 4;
+            $mhs->tanggungan = 0;
+            $mhs->update();
+        });
+        Alert::success('Sukses', 'Mahasiswa berhasil disetujui');
+        return redirect()->back();
+    } catch(Exception $e) {
+        Alert::success('Gagal', 'Mahasiswa gagal disetujui'.$e->getMessage());
+        return redirect()->back();
+    }
+  } 
+
+  public function tanggunganTolak(Request $request, $id)
+  {
+    // dd($request);
+    $request->validate([
+        'detailtanggungan'=>'required|min:6'
+    ]);
+
+    $mhs = User::find($id);
+
+    $mhs->update([
+        'detailtanggungan'=>$request->detailtanggungan,
+        'status'=>3,
+        'tanggungan'=>1
+    ]);
+
+    Alert::success('Sukses', 'Data mahasiswa berhasil diperbarui');
+    return redirect()->back();
   } 
 
   public function suratbebas()

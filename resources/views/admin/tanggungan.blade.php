@@ -9,9 +9,9 @@
     <div class="row min-vh-75 mt-8 cols">
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 btn-group mb-6 d-flex justify-content-center px-md-4 px-lg-9">
       <a href="/admin/aktivasi" class="col btn btn-lg btn-primary">1. Aktivasi</a>
-          <a href="/admin/validasi" class="col btn btn-lg btn-primary active" aria-current="page">2. Validasi</a>
+          <a href="/admin/validasi" class="col btn btn-lg btn-primary">2. Validasi</a>
           <a href="/admin/terimaTA" class="col btn btn-lg btn-primary">3. Terima TA</a>
-          <a href="/admin/tanggungan" class="col btn btn-lg btn-primary">4. Tanggungan</a>
+          <a href="/admin/tanggungan" class="col btn btn-lg btn-primary active" aria-current="page">4. Tanggungan</a>
           <a href="/admin/suratbebas" class="col btn btn-lg btn-primary">5. Surat BP</a>
       </div>
         
@@ -22,21 +22,21 @@
               <tr>
                 <th scope="col">Nama</th>
                 <th scope="col">NRP</th>
-                <th scope="col">Setuju</th>
+                <th scope="col">Bebas Tanggungan</th>
                 <th scope="col">Tolak</th>
               </tr>
             </thead>
             <tbody>
               @forelse ($mahasiswa as $mhs)
-                @if($mhs->status == 1)
+                @if($mhs->status == 3)
                   <tr>
                     <td>{{ $mhs->nama }}</td>
                     <td>{{ $mhs->nrp }}</td>
                     <td>
                       <span style="font-size: 25px; color: green;">
-                        <i class="far fa-check-circle" role="button" data-bs-toggle="modal" data-bs-target="#modalvalidasi-{{ $mhs->id }}"></i>
+                        <i class="far fa-check-circle" role="button" data-bs-toggle="modal" data-bs-target="#modaltanggungan-{{ $mhs->id }}"></i>
                       </span>
-                      <div class="modal fade" id="modalvalidasi-{{ $mhs->id }}">
+                      <div class="modal fade" id="modaltanggungan-{{ $mhs->id }}">
                         <div class="modal-dialog">
                           <div class="modal-content">
                             <div class="modal-header">
@@ -45,11 +45,11 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <p style="text-align: center; font-weight: bold; font-size: 16px">Apakah Anda yakin untuk menyetujui mahasiswa ini?</p>
+                                <p style="text-align: center; font-weight: bold; font-size: 16px">Apakah Anda yakin mahasiswa ini bebas dari tanggungan?</p>
                             </div>
                             <div class="modal-footer justify-content-between">
                                 <button type="button" class="btn btn-sm btn-warning" data-bs-dismiss="modal">Tidak</button>
-                                <form action="{{ route('mhs.validasi.setuju', $mhs->id) }}" method="post">
+                                <form action="{{ route('admin.tanggungan.setuju', $mhs->id) }}" method="post">
                                   @method('PUT')
                                   @csrf
                                   <button type="submit" class="btn btn-sm btn-success">Yakin</button>
@@ -61,9 +61,9 @@
                     </td>
                     <td>
                       <span style="font-size: 25px; color: red;">
-                        <i class="far fa-times-circle" role="button" data-bs-toggle="modal" data-bs-target="#modalvalidasi2-{{ $mhs->id }}"></i>
+                        <i class="far fa-times-circle" role="button" data-bs-toggle="modal" data-bs-target="#modaltanggungan2-{{ $mhs->id }}"></i>
                       </span>
-                      <div class="modal fade" id="modalvalidasi2-{{ $mhs->id }}">
+                      <div class="modal fade" id="modaltanggungan2-{{ $mhs->id }}">
                         <div class="modal-dialog">
                           <div class="modal-content">
                             <div class="modal-header">
@@ -72,15 +72,26 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <p style="text-align: center; font-weight: bold; font-size: 16px">Apakah Anda yakin untuk menolak?</p>
-                            </div>
-                            <div class="modal-footer justify-content-between">
-                                <button type="button" class="btn btn-sm btn-warning" data-bs-dismiss="modal">Tidak</button>
-                                <form action="{{ route('mhs.validasi.tolak', $mhs->id) }}" method="post">
-                                    {{ csrf_field() }}
-                                    {{ method_field('put') }}
-                                    <button type="submit" class="btn btn-sm btn-success">Yakin</button>
-                                </form>
+                              <p style="text-align: center; font-weight: bold; font-size: 16px">Alasan mahasiswa masih dalam tanggungan :</p>
+                              <form action="{{ route('admin.tanggungan.tolak', $mhs->id) }}" method="POST">
+
+                                {{ csrf_field() }}
+                                {{ method_field('put') }}
+
+                                <div class="form-group">
+                                  <input type="text" required minlength="6" class="form-control form-control-lg" name="detailtanggungan" id="detailtanggungan" 
+                                    placeholder="Masukkan alasan di sini" value="{{ old('detailtanggungan') }}">
+                                    @error('detailtanggungan')
+                                      <div class="invalid-feedback">
+                                        {{ $message }}
+                                      </div>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group text-center mt-4 mb-2">
+                                  <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                              </form>
                             </div>
                           </div>
                         </div>

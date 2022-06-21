@@ -27,6 +27,8 @@ class User extends Authenticatable
         'departemen',
         'judulTA',
         'status',
+        'tanggungan',
+        'detailtanggungan',
         'password',
     ];
 

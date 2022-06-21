@@ -24,6 +24,8 @@ class CreateUsersTable extends Migration
             $table->string('departemen')->nullable();
             $table->string('judulTA')->nullable();
             $table->string('status', 1)->default('0');
+            $table->string('tanggungan')->default('0');
+            $table->string('detailtanggungan')->default('-');
             $table->string('password');
             $table->timestamps();
         });

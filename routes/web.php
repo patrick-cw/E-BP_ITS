@@ -27,9 +27,8 @@ Route::prefix('admin')->group(function() {
     Route::get('/login',[App\Http\Controllers\Auth\AdminLoginController::class, 'showLoginForm'])->name('admin.login');
     Route::post('/login', [App\Http\Controllers\Auth\AdminLoginController::class, 'login'])->name('admin.login.submit');
     Route::get('/logout', [App\Http\Controllers\Auth\AdminLoginController::class, 'logout'])->name('admin.logout');
-    Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.dashboard');
-    Route::get('/registrasi', [App\Http\Controllers\AdminController::class, 'registrasi'])->name('admin.dashboard');
-    Route::put('/dashboard/registrasi/{id}', [App\Http\Controllers\AdminController::class, 'aktivasiMahasiswa'])->name('admin.aktivasi'); 
+    Route::get('/aktivasi', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.dashboard');
+    Route::put('/aktivasi/{id}', [App\Http\Controllers\AdminController::class, 'aktivasiMahasiswa'])->name('admin.aktivasi'); 
     Route::get('/detail/{id}', [App\Http\Controllers\AdminController::class, 'detail'])->name('mhs.detail');
 
     Route::get('/validasi', [App\Http\Controllers\AdminController::class, 'validasi']);
@@ -40,7 +39,9 @@ Route::prefix('admin')->group(function() {
     Route::put('/terimaTA/setuju/{id}', [App\Http\Controllers\AdminController::class, 'terimaTASetuju'])->name('admin.terima.setuju');
 
     Route::get('/tanggungan', [App\Http\Controllers\AdminController::class, 'tanggungan']);
+    Route::put('/admin/tanggungan/a/{id}', [App\Http\Controllers\AdminController::class, 'tanggunganSetuju'])->name('admin.tanggungan.setuju');
+    Route::put('/admin/tanggungan/d/{id}', [App\Http\Controllers\AdminController::class, 'tanggunganTolak'])->name('admin.tanggungan.tolak');
 
     Route::get('/suratbebas', [App\Http\Controllers\AdminController::class, 'suratbebas'])->name('admin.suratbebas');
-    Route::get('/suratbebas/setuju/{id}', [App\Http\Controllers\AdminController::class, 'suratbebasSetuju'])->name('admin.suratbebas.setuju');
+    Route::put('/suratbebas/setuju/{id}', [App\Http\Controllers\AdminController::class, 'suratbebasSetuju'])->name('admin.suratbebas.setuju');
 }) ;

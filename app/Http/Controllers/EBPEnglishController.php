@@ -21,7 +21,7 @@ class EBPEnglishController extends Controller
 
         $section = $phpWord->addSection();
 
-        $section->addImage('E:\Github\E-BebasPustaka\resources\header.png',array('width'=>453, 'height'=>105));
+        $section->addImage('A:\Github\E-BP_ITS\resources\header.png',array('width'=>453, 'height'=>105));
         $section->addTitle('Library Free Letter of Statement', 1);
         $section->addText('Number : '.$nomorSurat.'/EBP ITS/'.$date->month.'/'.$date->year,$fontStyleName,array('align'=>'center'));
         $section->addTextBreak(1);
@@ -41,7 +41,7 @@ class EBPEnglishController extends Controller
         $section->addText('Hereby this letter is given so that it can be used properly.',$fontStyleName);
         $section->addText('                                                                                         Surabaya',$fontStyleName);
         $section->addText('                                                                                         Head of Library,',$fontStyleName);
-        $section->addImage('E:\Github\E-BebasPustaka\resources\ttd.png',array('width'=>145, 'height'=>96,'align'=>'right'));
+        $section->addImage('A:\Github\E-BP_ITS\resources\ttd.png',array('width'=>145, 'height'=>96,'align'=>'right'));
         $section->addText('     Edy Suprayitno SS., M.Hum.',$fontStyleName,array('align'=>'right'));
         $section->addText('     NIP. 196804271992031001 .',$fontStyleName,array('align'=>'right'));
 

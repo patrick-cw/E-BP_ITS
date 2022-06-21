@@ -21,7 +21,7 @@ class EBPIndoController extends Controller
 
         $section = $phpWord->addSection();
 
-        $section->addImage('E:\Github\E-BebasPustaka\resources\header.png',array('width'=>453, 'height'=>105));
+        $section->addImage('A:\Github\E-BP_ITS\resources\header.png',array('width'=>453, 'height'=>105));
         $section->addTitle('SURAT KETERANGAN BEBAS PUSTAKA', 1);
         $section->addText('Nomor : '.$nomorSurat.'/EBP ITS/'.$date->month.'/'.$date->year,$fontStyleName,array('align'=>'center'));
         $section->addTextBreak(1);
@@ -41,7 +41,7 @@ class EBPIndoController extends Controller
         $section->addText('Demikian surat keterangan ini diberikan untuk dapat dipergunakan sebagaimana mestinya.',$fontStyleName);
         $section->addText('                                                                                         Surabaya',$fontStyleName);
         $section->addText('                                                                                         Kepala Perpustakaan,',$fontStyleName);
-        $section->addImage('E:\Github\E-BebasPustaka\resources\ttd.png',array('width'=>145, 'height'=>96,'align'=>'right'));
+        $section->addImage('A:\Github\E-BP_ITS\resources\ttd.png',array('width'=>145, 'height'=>96,'align'=>'right'));
         $section->addText('     Edy Suprayitno SS., M.Hum.',$fontStyleName,array('align'=>'right'));
         $section->addText('     NIP. 196804271992031001 .',$fontStyleName,array('align'=>'right'));
 

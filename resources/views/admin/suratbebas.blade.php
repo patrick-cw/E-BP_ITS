@@ -1,4 +1,4 @@
-@extends('layouts/app')
+@extends('layouts/admin')
 
 @section('content')
 
@@ -10,9 +10,9 @@
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 btn-group mb-6 d-flex justify-content-center px-md-4 px-lg-9">
       <a href="/admin/aktivasi" class="col btn btn-lg btn-primary">1. Aktivasi</a>
           <a href="/admin/validasi" class="col btn btn-lg btn-primary">2. Validasi</a>
-          <a href="/admin/terimaTA" class="col btn btn-lg btn-primary active" aria-current="page">3. Terima TA</a>
+          <a href="/admin/terimaTA" class="col btn btn-lg btn-primary">3. Terima TA</a>
           <a href="/admin/tanggungan" class="col btn btn-lg btn-primary">4. Tanggungan</a>
-          <a href="/admin/suratbebas" class="col btn btn-lg btn-primary">5. Surat BP</a>
+          <a href="/admin/suratbebas" class="col btn btn-lg btn-primary active" aria-current="page">5. Surat BP</a>
       </div>
         
       <div class="card-body shadow-lg mt-n2">
@@ -22,20 +22,20 @@
               <tr>
                 <th scope="col">Nama</th>
                 <th scope="col">NRP</th>
-                <th scope="col">Sudah Diterima</th>
+                <th scope="col">Kirim Surat</th>
               </tr>
             </thead>
             <tbody>
               @forelse ($mahasiswa as $mhs)
-                @if($mhs->status == 2)
+                @if($mhs->status == 4)
                   <tr>
                     <td>{{ $mhs->nama }}</td>
                     <td>{{ $mhs->nrp }}</td>
                     <td>
                       <span style="font-size: 25px; color: green;">
-                        <i class="far fa-check-circle" role="button" data-bs-toggle="modal" data-bs-target="#modalterima-{{ $mhs->id }}"></i>
+                        <i class="far fa-check-circle" role="button" data-bs-toggle="modal" data-bs-target="#modalsurat-{{ $mhs->id }}"></i>
                       </span>
-                      <div class="modal fade" id="modalterima-{{ $mhs->id }}">
+                      <div class="modal fade" id="modalsurat-{{ $mhs->id }}">
                         <div class="modal-dialog">
                           <div class="modal-content">
                             <div class="modal-header">
@@ -44,11 +44,11 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <p style="text-align: center; font-weight: bold; font-size: 16px">Apakah Anda yakin untuk menyetujui mahasiswa ini?</p>
+                                <p style="text-align: center; font-weight: bold; font-size: 16px">Apakah Anda yakin untuk mengirim surat kepada mahasiswa ini?</p>
                             </div>
                             <div class="modal-footer justify-content-between">
                                 <button type="button" class="btn btn-sm btn-warning" data-bs-dismiss="modal">Tidak</button>
-                                <form action="{{ route('admin.terima.setuju', $mhs->id) }}" method="post">
+                                <form action="{{ route('admin.suratbebas.setuju', $mhs->id) }}" method="post">
                                   @method('PUT')
                                   @csrf
                                   <button type="submit" class="btn btn-sm btn-success">Yakin</button>
@@ -69,6 +69,37 @@
       </div>
     </div>
   </div>
+
+</section>
+
+<!-- Modal -->
+
+<div class="modal fade" id="aktivasiModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="max-width: 700px">
+    <div class="modal-content" style="">
+      <div class="modal-body text-center text-black fs-2">
+        Apakah anda yakin untuk mengaktivasi akun ini?
+      </div>
+      <div class="modal-footer justify-content-center">
+        <a type="button" class="rounded-1 btn btn-lg btn-secondary mx-2" data-bs-dismiss="modal">Batal</a>
+        <a type="button" class="rounded-1 btn btn-lg btn-primary mx-2" href="/admin/aktivasi/{{ $mhs->id }}">iya</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="orderModal" class="modal hide fade" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+    <h3>Order</h3>
+
+  </div>
+  <div id="orderDetails" class="modal-body"></div>
+  <div id="orderItems" class="modal-body"></div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>
 
 </section>
 
