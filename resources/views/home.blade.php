@@ -111,7 +111,9 @@
     <div class="col-lg-8 text-center">
     <div class="card login-card">
         <h4 class="mt-5 mb-3">Validasi</h4>
-        <p class="mb-5">Data yang telah anda upload telah divalidasi. Lakukan pencetakan hardcopy TA dan kirim ke perpustakaan</p>
+        <p class="mb-5">Data yang telah anda upload telah divalidasi. Lakukan pencetakan hardcopy TA dan kirim ke perpustakaan.</p>
+        <p class="mb-5"> Berikut adalah kode repository anda:<br>{{ Auth::user()->kode_repo }}</p>
+        
     </div>
     </div>
     </div>
@@ -165,11 +167,11 @@
         </div>
     </div>
     <div class="row flex center mb-5">
-    <ul class="progressbar">
+    <ul class="progressbar-red">
             <li class="active">Aktivasi</li>
             <li class="active">Validasi</li>
             <li class="active">Penyerahan Hard Copy</li>
-            <li>Pengecekan Tanggungan</li>
+            <li class="active-red">Pengecekan Tanggungan</li>
             <li>Menerima Surat BP</li>
         </ul>
     </div>

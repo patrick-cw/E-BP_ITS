@@ -43,5 +43,4 @@ Route::prefix('admin')->group(function() {
     Route::put('/admin/tanggungan/d/{id}', [App\Http\Controllers\AdminController::class, 'tanggunganTolak'])->name('admin.tanggungan.tolak');
 
     Route::get('/suratbebas', [App\Http\Controllers\AdminController::class, 'suratbebas'])->name('admin.suratbebas');
-    Route::put('/suratbebas/setuju/{id}', [App\Http\Controllers\AdminController::class, 'suratbebasSetuju'])->name('admin.suratbebas.setuju');
 }) ;

@@ -50,10 +50,10 @@ class AdminController extends Controller
 
         // Mahasiswa::where('id', $id)
         //   ->update(['status' => 1]);
-        Alert::success('Sukses', 'Mahasiswa berhasil diverifikasi');
+        Alert::success('Sukses', 'Mahasiswa berhasil diaktivasi');
         return redirect()->back();
     } catch(Exception $e) {
-        Alert::success('Gagal', 'Mahasiswa gagal diverifikasi'.$e->getMessage());
+        Alert::success('Gagal', 'Mahasiswa gagal diaktivasi'.$e->getMessage());
         return redirect()->back();
     }
   }
@@ -61,15 +61,20 @@ class AdminController extends Controller
   public function validasiSetuju(Request $request, $id)
   {
     try {
+        $request->validate([
+            'detailvalidasi'=>'required'
+        ]);
+    
         DB::transaction(function() use ($request, $id) {
             $mhs = User::find($id);
             $mhs->status = 2;
+            $mhs->kode_repo = $request->detailvalidasi;
             $mhs->update();
         });
-        Alert::success('Sukses', 'Mahasiswa berhasil disetujui');
+        Alert::success('Sukses', 'Kode Repository Berhasil Dikirim');
         return redirect()->back();
     } catch(Exception $e) {
-        Alert::success('Gagal', 'Mahasiswa gagal disetujui'.$e->getMessage());
+        Alert::success('Gagal', 'Kode Repository Gagal Dikirim'.$e->getMessage());
         return redirect()->back();
     }
   } 
@@ -174,19 +179,5 @@ class AdminController extends Controller
       return view ('admin.suratbebas', compact(['admin', 'mahasiswa']));
   } 
 
-  public function suratbebasSetuju(Request $request, $id)
-  {
-    try {
-        DB::transaction(function() use ($request, $id) {
-            $mhs = User::find($id);
-            $mhs->status = 4;
-            $mhs->update();
-        });
-        Alert::success('Sukses', 'Mahasiswa berhasil disetujui');
-        return redirect()->back();
-    } catch(Exception $e) {
-        Alert::success('Gagal', 'Mahasiswa gagal disetujui'.$e->getMessage());
-        return redirect()->back();
-    }
-  }
+  
 }

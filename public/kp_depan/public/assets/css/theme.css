@@ -18664,3 +18664,59 @@ ul li.playing .row span::before
   .progressbar li.active + li:after {
       background-color: #55b776;
   }
+
+  .progressbar-red {
+    counter-reset: step;
+}
+.progressbar-red li {
+    list-style-type: none;
+    width: 20%;
+    float: left;
+    font-size: 12px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    color: #7d7d7d;
+}
+.progressbar-red li:before {
+    width: 30px;
+    height: 30px;
+    content: counter(step);
+    counter-increment: step;
+    line-height: 30px;
+    border: 2px solid #7d7d7d;
+    display: block;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    background-color: white;
+}
+.progressbar-red li:after {
+    width: 100%;
+    height: 2px;
+    content: '';
+    position: absolute;
+    background-color: #7d7d7d;
+    top: 15px;
+    left: -50%;
+    z-index: -1;
+}
+.progressbar-red li:first-child:after {
+    content: none;
+}
+.progressbar-red li.active {
+    color: green;
+}
+.progressbar-red li.active:before {
+    border-color: #55b776;
+}
+.progressbar-red li.active + li:after {
+    background-color: #55b776;
+}
+
+.progressbar-red li.active-red {
+  color: red;
+}
+.progressbar-red li.active-red:before {
+  border-color: #b75555;
+}

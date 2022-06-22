@@ -27,6 +27,7 @@ class User extends Authenticatable
         'departemen',
         'judulTA',
         'status',
+        'kode_repo',
         'tanggungan',
         'detailtanggungan',
         'password',

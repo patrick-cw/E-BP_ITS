@@ -22,7 +22,6 @@
               <tr>
                 <th scope="col">Nama</th>
                 <th scope="col">NRP</th>
-                <th scope="col">Kirim Surat</th>
               </tr>
             </thead>
             <tbody>
@@ -31,33 +30,6 @@
                   <tr>
                     <td>{{ $mhs->nama }}</td>
                     <td>{{ $mhs->nrp }}</td>
-                    <td>
-                      <span style="font-size: 25px; color: green;">
-                        <i class="far fa-check-circle" role="button" data-bs-toggle="modal" data-bs-target="#modalsurat-{{ $mhs->id }}"></i>
-                      </span>
-                      <div class="modal fade" id="modalsurat-{{ $mhs->id }}">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <p style="text-align: center; font-weight: bold; font-size: 16px">Apakah Anda yakin untuk mengirim surat kepada mahasiswa ini?</p>
-                            </div>
-                            <div class="modal-footer justify-content-between">
-                                <button type="button" class="btn btn-sm btn-warning" data-bs-dismiss="modal">Tidak</button>
-                                <form action="{{ route('admin.suratbebas.setuju', $mhs->id) }}" method="post">
-                                  @method('PUT')
-                                  @csrf
-                                  <button type="submit" class="btn btn-sm btn-success">Yakin</button>
-                                </form>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
                   </tr>
                 @endif
               @empty

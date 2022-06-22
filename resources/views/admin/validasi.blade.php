@@ -45,15 +45,26 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <p style="text-align: center; font-weight: bold; font-size: 16px">Apakah Anda yakin untuk menyetujui mahasiswa ini?</p>
-                            </div>
-                            <div class="modal-footer justify-content-between">
-                                <button type="button" class="btn btn-sm btn-warning" data-bs-dismiss="modal">Tidak</button>
-                                <form action="{{ route('mhs.validasi.setuju', $mhs->id) }}" method="post">
-                                  @method('PUT')
-                                  @csrf
-                                  <button type="submit" class="btn btn-sm btn-success">Yakin</button>
-                                </form>
+                              <p style="text-align: center; font-weight: bold; font-size: 16px">Masukkan Kode Repository Mahasiswa {{ $mhs->nama }} :</p>
+                              <form action="{{ route('mhs.validasi.setuju', $mhs->id) }}" method="POST">
+
+                                {{ csrf_field() }}
+                                {{ method_field('put') }}
+
+                                <div class="form-group">
+                                  <input type="text" required minlength="6" class="form-control form-control-lg" name="detailvalidasi" id="detailvalidasi" 
+                                    placeholder="Masukkan kode" value="{{ old('detailvalidasi') }}">
+                                    @error('detailvalidasi')
+                                      <div class="invalid-feedback">
+                                        {{ $message }}
+                                      </div>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group text-center mt-4 mb-2">
+                                  <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                              </form>
                             </div>
                           </div>
                         </div>
