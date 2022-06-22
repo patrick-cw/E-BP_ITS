@@ -14,16 +14,19 @@
            
           <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
             <ul id='navbarMenu' class="navbar-nav ms-auto pt-2 pt-lg-0">
-              <li class="nav-item"><a class="nav-link" href="#Beranda" id="home-btn">Home</a></li>
-              
+              <li class="nav-item"><a class="nav-link" href="/#Beranda" id="home-btn">Beranda</a></li>
               <li class="nav-item">
-                  <a class="nav-link" href="#Status" id="home-btn" >Status</a>
+                  <a class="nav-link" href="/#Panduan" id="home-btn">Panduan</a>
               </li>
-              @if(Auth::user()->status == 4)
               <li class="nav-item">
-                  <a class="nav-link" href="#Download" id="home-btn" >Download</a>
+                  <a class="nav-link" href="/#Tahapan" id="home-btn">Tahapan</a>
               </li>
-              @endif
+              <li class="nav-item">
+                  <a class="nav-link" href="/#Layanan" id="home-btn" >Layanan</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/status" id="home-btn" >Status Pengajuan</a>
+              </li>
               @guest
                   @if (Route::has('login'))
                       <li class="nav-item">
@@ -38,14 +41,13 @@
                   @endif
               @else
                 <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    <i class="bi bi-person-circle"></i>
-                        {{ Auth::user()->nama }}
-                    </a>
+                      <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                      <i class="bi bi-person-circle"></i>
+                          {{ Auth::user()->nama }}
+                      </a>
 
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="/home">Profil</a>
-                        <a class="dropdown-item" href="/home">Status Pengajuan</a>
+                        <a class="dropdown-item" href="/edit_password">Ubah Password</a>
                         <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#logoutModal" href="">Logout</a>
                     </div>
                 </li>

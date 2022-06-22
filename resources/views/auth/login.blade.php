@@ -42,8 +42,12 @@
                               </div>
                               <div class="d-grid gap-2">
                                 <button type="submit" class="btn btn-primary hover-top rounded-1">Masuk</button>
-                
-                                {{-- <span class="px-2 mt-3 mx-auto">Belum punya akun?</span> --}}
+                                @if (Route::has('password.request'))
+                                <h6 class="my-3"><span class="mx-2">Lupa Password?</span></h6>
+                                    <a class="btn btn-outline-primary hover-top rounded-1" href="{{ route('password.request') }}">
+                                        {{ __('Reset Password') }}
+                                    </a>
+                                @endif
                                 <h6 class="my-3"><span class="mx-2">Belum punya akun?</span></h6>
                 
                                 <a class="btn btn-outline-primary hover-top rounded-1" href="/register" role="button">Buat Akun</a>

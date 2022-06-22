@@ -18,10 +18,17 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/status', [App\Http\Controllers\HomeController::class, 'index'])->name('status');
+    Route::get('/createWord/eng', [App\Http\Controllers\EBPEnglishController::class,'createWordDoc']);
+    Route::get('/createWord/ind', [App\Http\Controllers\EBPIndoController::class,'createWordDoc']);
+    Route::get('/edit_profil', [App\Http\Controllers\HomeController::class,'edit_profil'])->name('edit_profil');
+    Route::patch('/edit_profil/{id}', [App\Http\Controllers\HomeController::class,'edit_profil_approve'])->name('edit_profil_approve');
+    Route::get('/edit_password', [App\Http\Controllers\HomeController::class,'edit_password'])->name('edit_password');
+    Route::patch('/edit_password/{id}', [App\Http\Controllers\HomeController::class,'edit_password_approve'])->name('edit_password_approve');
+    Route::get('/profil', [App\Http\Controllers\HomeController::class,'profil'])->name('profil');
+});
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/createWord/eng', [App\Http\Controllers\EBPEnglishController::class,'createWordDoc']);
-Route::get('/createWord/ind', [App\Http\Controllers\EBPIndoController::class,'createWordDoc']);
 
 Route::prefix('admin')->group(function() {
     Route::get('/login',[App\Http\Controllers\Auth\AdminLoginController::class, 'showLoginForm'])->name('admin.login');

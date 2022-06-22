@@ -46,7 +46,7 @@
   
   <body>
     @include('sweetalert::alert')
-    @include('layouts/admin/nav_admin')
+    @include('layouts/nav/nav_admin')
 
     <!-- ===============================================-->
     <!--    Main Content-->

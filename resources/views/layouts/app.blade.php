@@ -25,11 +25,12 @@
     <link rel="stylesheet" href="{{asset('plugins')}}/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
    
-</head>
+</head> 
 <body>
     
     @include('sweetalert::alert')
-    @include('layouts/nav_landing')
+    <div id="content-wrapper" class="d-flex flex-column">
+    @include('layouts/nav/nav_landing')
         <main class="py-4">
             @yield('content')
         </main>

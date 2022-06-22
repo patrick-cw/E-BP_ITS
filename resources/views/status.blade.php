@@ -1,7 +1,8 @@
 @extends('layouts.home_app')
 
 @section('content')
-<section class="py-0" id="Beranda">
+
+<section class="py-0" id="Informasi">
     <div class="bg-holder d-none d-md-block" style="background-blend-mode: lighten;background-image:url(kp_depan/public/assets/img/illustrations/undraw_Envelope_re_f5j4.png);background-position:right;background-size:contain;">
     </div>
     <!--/.bg-holder-->
@@ -18,6 +19,69 @@
             </div>
         </div>
         </div>
+    </div>
+</section>
+<section class="pt-5" id="Profil">
+    <div class="container">
+    <div class="row flex-center mb-5">
+        <div class="col-lg-8 text-center">
+        <h1 class="fw-bold fs-md-3 fs-lg-4 fs-xl-5">Profil</h1>
+        <hr class="mx-auto text-primary my-4" style="height:3px; width:70px;" />
+
+        <p class="mx-auto">Pastikan data profil anda sudah benar. Lakukan perubahan jika ada yang masih salah.</p>
+
+        </div>
+    
+        <table class="table table-hover border-light table-bordered pt-3 pb-2" id="adminTable">
+            <thead class="table-primary">
+              <tr>
+                <th scope="col">Informasi</th>
+                <th scope="col">Data</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> Nama </td>
+                    <td> {{ Auth::user()->nama }} </td>
+                </tr>
+                <tr>
+                    <td> NRP </td>
+                    <td> {{ Auth::user()->nrp }}</td>
+                </tr>
+                <tr>
+                    <td> Email </td>
+                    <td> {{ Auth::user()->email }}</td>
+                </tr>
+                <tr>
+                    <td> Nomor Telepon </td> 
+                    <td> {{ Auth::user()->telp }}</td>
+                </tr>
+                <tr>
+                    <td> Jenjang </td>
+                    <td> {{ Auth::user()->jenjang }}</td>
+                </tr>
+                <tr>
+                    <td> Fakultas </td>
+                    <td> {{ Auth::user()->fakultas }}</td>
+                </tr>
+                <tr>
+                    <td> Departemen </td>
+                    <td> {{ Auth::user()->departemen }}</td>
+                </tr>
+                <tr>
+                    <td> Judul TA </td>
+                    <td> {{ Auth::user()->judulTA }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <a class="btn btn-lg btn-primary hover-top rounded-1" style="border-radius:50px ;" href="/edit_profil" role="button">Edit Profil</a>
+    </div>
+    <div class="row no-gutters flex-center mb-5">
+    <div class="col-lg-8 text-center">
+    </div>
+    </div>
+    </div>
+    </div>
     </div>
 </section>
 @if (Auth::user()->status == 0)
@@ -223,6 +287,7 @@
     </div>
 </section>
 
+
 <section class="pt-5" id="Download">
     <div class="container">
     <div class="row flex-center mb-5">
@@ -256,5 +321,6 @@
     </div>
 </section>
 @endif
+
 
 @endsection

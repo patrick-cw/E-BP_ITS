@@ -1,16 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Confirm Password') }}</div>
-
-                <div class="card-body">
-                    {{ __('Please confirm your password before continuing.') }}
-
-                    <form method="POST" action="{{ route('password.confirm') }}">
+<link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link href="kp_depan/public/assets/css/theme.css" rel="stylesheet" />
+<main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+        <div class="container" style="padding-top:70px;padding-bottom:70px;">
+            <div class="card login-card">
+                <div class="row no-gutters">
+                    <!-- <div class="col-md-6">
+                        <img src="kp_depan/public/assets/img/illustrations/undraw_Envelope_re_f5j4.png" alt="login" class="login-card-img">
+                    </div> -->
+                    <!-- <div class="col-md-1"></div> -->
+                    <div class="col-md-12">
+                        <div class="card-body">
+                        <p class="ps-2 mt-3 text-center" style="font-size: xx-large;">Konfirmasi Password</p>
+                      <p class="ps-2 mt-3 text-center text-black" style="font-size: small">Masukkan Password baru untuk Akun anda!</p>
+                      <form method="POST" action="{{ route('password.confirm') }}">
                         @csrf
 
                         <div class="row mb-3">
@@ -41,9 +47,12 @@
                             </div>
                         </div>
                     </form>
+                        </div>
+                      </div>
+                  </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+          </div>
+
+      </main>
 @endsection

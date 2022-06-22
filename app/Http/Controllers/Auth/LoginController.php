@@ -33,7 +33,7 @@ class LoginController extends Controller
     protected function authenticated($request, $user)
     {
         Alert::success('Sukses!', 'Berhasil Login'); 
-        return redirect('/home');
+        return redirect('/status');
     }
    
     /**

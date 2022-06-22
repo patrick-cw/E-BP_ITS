@@ -53,7 +53,7 @@ class AdminController extends Controller
         Alert::success('Sukses', 'Mahasiswa berhasil diaktivasi');
         return redirect()->back();
     } catch(Exception $e) {
-        Alert::success('Gagal', 'Mahasiswa gagal diaktivasi'.$e->getMessage());
+        Alert::error('Gagal', 'Mahasiswa gagal diaktivasi'.$e->getMessage());
         return redirect()->back();
     }
   }
@@ -74,7 +74,7 @@ class AdminController extends Controller
         Alert::success('Sukses', 'Kode Repository Berhasil Dikirim');
         return redirect()->back();
     } catch(Exception $e) {
-        Alert::success('Gagal', 'Kode Repository Gagal Dikirim'.$e->getMessage());
+        Alert::error('Gagal', 'Kode Repository Gagal Dikirim'.$e->getMessage());
         return redirect()->back();
     }
   } 
@@ -90,7 +90,7 @@ class AdminController extends Controller
         Alert::success('Sukses', 'Mahasiswa berhasil ditolak');
         return redirect()->back();
     } catch(Exception $e) {
-        Alert::success('Gagal', 'Mahasiswa gagal ditolak'.$e->getMessage());
+        Alert::error('Gagal', 'Mahasiswa gagal ditolak'.$e->getMessage());
         return redirect()->back();
     }
   } 
@@ -122,7 +122,7 @@ class AdminController extends Controller
         Alert::success('Sukses', 'Mahasiswa berhasil disetujui');
         return redirect()->back();
     } catch(Exception $e) {
-        Alert::success('Gagal', 'Mahasiswa gagal disetujui'.$e->getMessage());
+        Alert::error('Gagal', 'Mahasiswa gagal disetujui'.$e->getMessage());
         return redirect()->back();
     }
   } 
@@ -147,7 +147,7 @@ class AdminController extends Controller
         Alert::success('Sukses', 'Mahasiswa berhasil disetujui');
         return redirect()->back();
     } catch(Exception $e) {
-        Alert::success('Gagal', 'Mahasiswa gagal disetujui'.$e->getMessage());
+        Alert::error('Gagal', 'Mahasiswa gagal disetujui'.$e->getMessage());
         return redirect()->back();
     }
   } 

@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('kode_repo')->default('0');
             $table->string('detailtanggungan')->default('-');
             $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

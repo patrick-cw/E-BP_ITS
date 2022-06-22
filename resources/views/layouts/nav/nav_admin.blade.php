@@ -22,7 +22,6 @@
                     </a>
 
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/admin/aktivasi">Profil</a>
                     <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#logoutModal" href="">Logout</a>
                 </div>
                 </li>
