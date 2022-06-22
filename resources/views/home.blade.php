@@ -119,7 +119,7 @@
     </div>
     </div>
 </section>
-@elseif(Auth::user()->status == 3)
+@elseif(Auth::user()->status == 3 && Auth::user()->tanggungan == 0)
 <section class="pt-5" id="Status">
     <div class="container">
     <div class="row flex-center mb-5">
@@ -145,6 +145,39 @@
     <div class="card login-card">
         <h4 class="mt-5 mb-3">Hard Copy Diterima</h4>
         <p class="mb-5">Hard Copy sudah diterima perpustakaan. Pengecekan buku yang masih belum dikembalikan sedang dilakukan</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</section>
+@elseif(Auth::user()->status == 3 && Auth::user()->tanggungan == 1)
+<section class="pt-5" id="Status">
+    <div class="container">
+    <div class="row flex-center mb-5">
+        <div class="col-lg-8 text-center">
+        <h1 class="fw-bold fs-md-3 fs-lg-4 fs-xl-5">Status</h1>
+        <hr class="mx-auto text-primary my-4" style="height:3px; width:70px;" />
+
+        <p class="mx-auto">Status proses mendapatkan surat bebas pustaka</p>
+
+        </div>
+    </div>
+    <div class="row flex center mb-5">
+    <ul class="progressbar">
+            <li class="active">Aktivasi</li>
+            <li class="active">Validasi</li>
+            <li class="active">Penyerahan Hard Copy</li>
+            <li>Pengecekan Tanggungan</li>
+            <li>Menerima Surat BP</li>
+        </ul>
+    </div>
+    <div class="row no-gutters flex-center mb-5">
+    <div class="col-lg-8 text-center">
+    <div class="card login-card">
+        <h4 class="mt-5 mb-3">Anda Masih Memiliki Tanggungan</h4>
+        <p class="mb-5">{{ Auth::user()->detailtanggungan }}</p>
     </div>
     </div>
     </div>

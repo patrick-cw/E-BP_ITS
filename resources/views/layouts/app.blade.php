@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="/kp_depan/public/vendors/plyr/plyr.css">
     <link rel="stylesheet" href="/kp_depan/public/assets/css/theme.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="{{asset('AdminLTE')}}/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="{{asset('plugins')}}/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
    
 </head>

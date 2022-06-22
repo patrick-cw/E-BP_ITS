@@ -1,4 +1,4 @@
-@extends('layouts/app')
+@extends('layouts/admin')
 
 @section('content')
 
@@ -15,7 +15,7 @@
           <a href="/admin/suratbebas" class="col btn btn-lg btn-primary">5. Surat BP</a>
       </div>
         
-      <div class="card-body shadow-lg mt-n2">
+      <div class="card-body shadow-lg mb-4">
         <div class="table-responsive">
           <table class="table table-hover border-light table-bordered pt-3 pb-2" id="adminTable">
             <thead class="table-primary">

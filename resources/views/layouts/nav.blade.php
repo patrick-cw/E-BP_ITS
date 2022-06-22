@@ -1,3 +1,8 @@
+<style>
+   .nav-item{
+    text-align: right;
+}
+</style>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 backdrop" data-navbar-on-scroll="data-navbar-on-scroll">
         <div class="container">
           <a class="navbar-brand d-flex align-items-center fw-bold fs-2" href="/"> 
