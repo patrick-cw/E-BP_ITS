@@ -26,20 +26,20 @@
     <h2 class="text-center">{{ $title }}</h2>
     <p class="text-center">{{ $no }}</p>
     <br>
-    <p style="margin-left: 60px;margin-right: 60px;">Yang bertanda tangan dibawah ini:</p>
-    <p style="margin-left: 100px;margin-right: 60px;">Nama : Edy Suprayitno, S.S., M.Hum.</p>
-    <p style="margin-left: 100px;margin-right: 60px;">NIP : 196804271992031001</p>
-    <p style="margin-left: 100px;margin-right: 60px;">Jabatan : Kepala Perpustakaan</p>
-    <p style="margin-left: 100px;margin-right: 60px;">Alamat : Kampus ITS Sukolilo</p>
-    <p style="margin-left: 60px;margin-right: 60px;">Dengan ini menerangkan bahwa:</p>
-    <p style="margin-left: 100px;margin-right: 60px;">{{ $nama }}</p>
-    <p style="margin-left: 100px;margin-right: 60px;">{{ $nrp }}</p>
-    <p style="margin-left: 100px;margin-right: 60px;">{{ $dep }}</p>
-    <p style="margin-left: 60px;margin-right: 60px;">berdasarkan data kami, sudah memenuhi persyaratan Bebas Pustaka:</p>
-    <p style="margin-left: 100px;margin-right: 60px;">1. Menyerahkan Hardcopy dan Softcopy TA/Tesis/Disertasi</p>
-    <p style="margin-left: 100px;margin-right: 60px;">2. Bebas Tanggungan Pinjaman Koleksi dan Administrasi</p>
-    <p style="margin-left: 60px;margin-right: 60px;">di Perpustakaan Institut Teknologi Sepuluh Nopember (ITS) Surabaya.</p>
-    <p style="margin-left: 60px;margin-right: 60px;">Demikian surat keterangan ini diberikan untuk dapat dipergunakan sebagaimana mestinya.</p>
+    <p style="margin-left: 50px;margin-right: 50px;">Yang bertanda tangan dibawah ini:</p>
+    <p style="margin-left: 100px;margin-right: 50px;">Nama : Edy Suprayitno, S.S., M.Hum.</p>
+    <p style="margin-left: 100px;margin-right: 50px;">NIP : 196804271992031001</p>
+    <p style="margin-left: 100px;margin-right: 50px;">Jabatan : Kepala Perpustakaan</p>
+    <p style="margin-left: 100px;margin-right: 50px;">Alamat : Kampus ITS Sukolilo</p>
+    <p style="margin-left: 50px;margin-right: 50px;">Dengan ini menerangkan bahwa:</p>
+    <p style="margin-left: 100px;margin-right: 50px;">{{ $nama }}</p>
+    <p style="margin-left: 100px;margin-right: 50px;">{{ $nrp }}</p>
+    <p style="margin-left: 100px;margin-right: 50px;">{{ $dep }}</p>
+    <p style="margin-left: 50px;margin-right: 50px;">berdasarkan data kami, sudah memenuhi persyaratan Bebas Pustaka:</p>
+    <p style="margin-left: 100px;margin-right: 50px;">1. Menyerahkan Hardcopy dan Softcopy TA/Tesis/Disertasi</p>
+    <p style="margin-left: 100px;margin-right: 50px;">2. Bebas Tanggungan Pinjaman Koleksi dan Administrasi</p>
+    <p style="margin-left: 50px;margin-right: 50px;">di Perpustakaan Institut Teknologi Sepuluh Nopember (ITS) Surabaya.</p>
+    <p style="margin-left: 50px;margin-right: 50px;">Demikian surat keterangan ini diberikan untuk dapat digunakan sebagaimana mestinya.</p>
     <br>
     <p class="text-right" style="margin-right:190px;">Surabaya,</p>
     <p class="text-right" style="margin-right: 105px;">Kepala Perpustakaan,</p>

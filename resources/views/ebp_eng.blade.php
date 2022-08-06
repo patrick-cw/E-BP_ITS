@@ -26,20 +26,20 @@
     <h2 class="text-center">{{ $title }}</h2>
     <p class="text-center">{{ $no }}</p>
     <br>
-    <p style="margin-left: 60px;margin-right: 60px;">The undersigned below:</p>
-    <p style="margin-left: 100px;margin-right: 60px;">Name : Edy Suprayitno, S.S., M.Hum.</p>
-    <p style="margin-left: 100px;margin-right: 60px;">NIP : 196804271992031001</p>
-    <p style="margin-left: 100px;margin-right: 60px;">Position : Head of Library</p>
-    <p style="margin-left: 100px;margin-right: 60px;">Address : Kampus ITS Sukolilo</p>
-    <p style="margin-left: 60px;margin-right: 60px;">With this letter explains that:</p>
-    <p style="margin-left: 100px;margin-right: 60px;">{{ $nama }}</p>
-    <p style="margin-left: 100px;margin-right: 60px;">{{ $nrp }}</p>
-    <p style="margin-left: 100px;margin-right: 60px;">{{ $dep }}</p>
-    <p style="margin-left: 60px;margin-right: 60px;">by our data already fullfilled the requirements for library free:</p>
-    <p style="margin-left: 100px;margin-right: 60px;">1. Submit hardcopy and softcopy of FP/Thesis/Disertation</p>
-    <p style="margin-left: 100px;margin-right: 60px;">2. Free of Borrowed Books List</p>
-    <p style="margin-left: 60px;margin-right: 60px;">at Institut Teknologi Sepuluh Nopember (ITS) Surabaya library.</p>
-    <p style="margin-left: 60px;margin-right: 60px;">Hereby this letter is given so that it can be used properly.</p>
+    <p style="margin-left: 50px;margin-right: 50px;">The undersigned below:</p>
+    <p style="margin-left: 100px;margin-right: 50px;">Name : Edy Suprayitno, S.S., M.Hum.</p>
+    <p style="margin-left: 100px;margin-right: 50px;">NIP : 196804271992031001</p>
+    <p style="margin-left: 100px;margin-right: 50px;">Position : Head of Library</p>
+    <p style="margin-left: 100px;margin-right: 50px;">Address : Kampus ITS Sukolilo</p>
+    <p style="margin-left: 50px;margin-right: 50px;">With this letter explains that:</p>
+    <p style="margin-left: 100px;margin-right: 50px;">{{ $nama }}</p>
+    <p style="margin-left: 100px;margin-right: 50px;">{{ $nrp }}</p>
+    <p style="margin-left: 100px;margin-right: 50px;">{{ $dep }}</p>
+    <p style="margin-left: 50px;margin-right: 50px;">by our data already fullfilled the requirements for library free:</p>
+    <p style="margin-left: 100px;margin-right: 50px;">1. Submit hardcopy and softcopy of FP/Thesis/Disertation</p>
+    <p style="margin-left: 100px;margin-right: 50px;">2. Free of Borrowed Books List</p>
+    <p style="margin-left: 50px;margin-right: 50px;">at Institut Teknologi Sepuluh Nopember (ITS) Surabaya library.</p>
+    <p style="margin-left: 50px;margin-right: 50px;">Hereby this letter is given so that it can be used properly.</p>
     <br>
     <p class="text-right" style="margin-right:190px;">Surabaya,</p>
     <p class="text-right" style="margin-right: 150px;">Head of Library,</p>
