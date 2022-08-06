@@ -307,7 +307,7 @@
         <script type = "text/javascript">
         var urlmenu = document.getElementById('floatingSelect');
         var btn = document.getElementById("btn");
-        
+      
         // Set up a click event handling function for the button 
         btn.addEventListener("click", function() {
             // Confirmation of action for testing
